@@ -1,0 +1,40 @@
+/*******************************
+*Иванова Ярославна ПИз-211     *
+*16.02.2021                    *
+*Лабораторная работа №4        *
+*******************************/
+#include <iostream>
+#include <ctime>
+using namespace std;
+ 
+int main() {
+    srand((int)time(0));
+    const int number = 9;
+    double a[number][number], sum=0.0;
+ 
+    for (int i = 0; i < number; i++)
+    {
+    for (int j = 0; j < number; j++)
+    {
+    a[i][j]=rand()%9 + 1;
+    cout <<a[i][j]<<" ";
+    }
+    cout << endl;
+    }
+    cout << endl;
+    
+    for (int i = 0; i < number; i++)
+    {
+    for (int j = 0; j < number; j++)
+    {
+    if (i<j) a[i][j]=a[j][i];
+    if (j>i) sum+=a[j][i]; 
+    cout <<a[i][j]<<" ";
+    }
+    cout << endl;
+    }
+    
+    cout <<"local sum = "<<sum<<endl;
+system("pause");
+return 0;
+}
